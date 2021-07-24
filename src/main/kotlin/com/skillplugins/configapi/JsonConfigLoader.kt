@@ -14,7 +14,10 @@ abstract class JsonConfigLoader<T : JsonConfig>(private val jsonConfig: T) {
 
     var config: T? = null
         get() {
-            if (!loaded) loadConfig()
+            if (!loaded) {
+                loadConfig()
+                loaded = true
+            }
             return field
         }
 

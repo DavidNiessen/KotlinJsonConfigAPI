@@ -31,7 +31,7 @@ abstract class JsonConfigLoader<T : JsonConfig>(private val jsonConfig: T) {
         }
     }
 
-    private fun save(jsonConfig: T) {
+    fun save(jsonConfig: T) {
         if (file.exists() && !file.delete()) return
 
         val gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
